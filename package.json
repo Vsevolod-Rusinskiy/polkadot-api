@@ -23,6 +23,7 @@
     "packages/*"
   ],
   "scripts": {
+    "prepare": "yarn build",
     "build": "yarn build:interfaces && polkadot-dev-build-ts",
     "build:before": "polkadot-dev-copy-dir --cd packages/typegen scripts build",
     "build:interfaces": "node --loader @polkadot/dev-ts packages/typegen/scripts/polkadot-types-internal-interfaces.mjs",
