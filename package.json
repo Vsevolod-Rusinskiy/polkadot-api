@@ -15,15 +15,14 @@
   "sideEffects": false,
   "type": "module",
   "version": "15.8.1",
-"versions": {
-  "git": "15.8.1",
-  "npm": "15.8.1"
-},
+  "versions": {
+    "git": "15.8.1",
+    "npm": "15.8.1"
+  },
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "prepare": "yarn build",
     "build": "yarn build:interfaces && polkadot-dev-build-ts",
     "build:before": "polkadot-dev-copy-dir --cd packages/typegen scripts build",
     "build:interfaces": "node --loader @polkadot/dev-ts packages/typegen/scripts/polkadot-types-internal-interfaces.mjs",
@@ -36,6 +35,7 @@
     "deno": "yarn polkadot-dev-deno-map && yarn build && deno check --import-map=import_map.json mod.ts",
     "lint": "polkadot-dev-run-lint",
     "postinstall": "polkadot-dev-yarn-only",
+    "prepare": "yarn build",
     "test": "polkadot-dev-run-test --env node ^e2e",
     "test:node": "polkadot-dev-run-test --env node ^e2e",
     "test:one": "polkadot-dev-run-test --env node"
